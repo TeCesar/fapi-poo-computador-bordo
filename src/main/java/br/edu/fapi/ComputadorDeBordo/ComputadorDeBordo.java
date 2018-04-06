@@ -36,7 +36,7 @@ public class ComputadorDeBordo {
     public void setVerificaPercurso(VerificaPercurso verificaPercurso) {
         this.verificaPercurso = verificaPercurso;
     }
-    
+    //Não está sendo usado.
     public void mostrarCarro (ComputadorDeBordo computadorDeBordo){
         System.out.println("");
         
@@ -59,8 +59,6 @@ public class ComputadorDeBordo {
         System.out.println("Modelo do motor: " + computadorDeBordo.getCarro().getMotor().getModeloMotor());
         
         System.out.println("Quilometragem do motor: " + computadorDeBordo.getCarro().getMotor().getQuilometragemMotor());
-        
-        //System.out.println("Quilometros por litro que o motor faz: " + computadorDeBordo.getCarro().getMotor().getQuilometrosPorLitro());
         
         System.out.println("Capacidade do tanque: " + computadorDeBordo.getCarro().getTanqueDeGasolina().getCapacidadeTanque());
         

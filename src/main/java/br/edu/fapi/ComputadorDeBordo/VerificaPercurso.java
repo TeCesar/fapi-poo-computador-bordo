@@ -1,5 +1,5 @@
 package br.edu.fapi.ComputadorDeBordo;
-
+//diminuiDurabilidadePneu**
 public class VerificaPercurso {
     
     public float verificarGasolina (){
