@@ -43,8 +43,10 @@ public class VerificaPercurso {
     public boolean verificarStep (ComputadorDeBordo computadorDeBordo){
         if (computadorDeBordo.getCarro().getPneuStep().isStep() == true){
             System.out.println("Seu pneu furou. Substituindo pelo step.");
+            System.out.println("");
         }else{
             System.out.println("Que pena. seu pneu furou e você não tem step.");
+            System.out.println("");
             
         }
         return computadorDeBordo.getCarro().getPneuStep().isStep();
@@ -52,7 +54,7 @@ public class VerificaPercurso {
     
     public void diminuiDurabilidadePneu_Step (ComputadorDeBordo computadorDeBordo){
         int quilometragem;
-        quilometragem = computadorDeBordo.getCarro().getPneuStep().getDurabilidadePneu() - computadorDeBordo.getCarro().getPneuStep().getQuilometragemPneu();
+        quilometragem = computadorDeBordo.getCarro().getPneuStep().getQuilometragemPneu();
     
     
                int quilometragemDiminuida = quilometragem - 1;

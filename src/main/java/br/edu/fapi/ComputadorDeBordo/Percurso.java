@@ -15,7 +15,7 @@ public class Percurso {
                     System.out.println("Acabou sua gasolina. A viagem acabou.");
                     km = 500;
                 }else if (km == contDurabilidade){
-                    System.out.println("Seus pneus estouraram.");
+                    System.out.println("Seus pneus estouraram. A viagem acabou.");
                     km = 500;
                 }
                 
@@ -62,8 +62,21 @@ public class Percurso {
                     System.out.println("Você não possui Bluetooth para realizar ligações");
                 }
             }else if (km == 400){
-                computadorDeBordo.getVerificaPercurso().verificarStep(computadorDeBordo);
-            }else if (km > 400 && computadorDeBordo.getVerificaPercurso().verificarStep(computadorDeBordo) == true){
+                if (computadorDeBordo.getCarro().getPneuStep().isStep() == true){
+                    System.out.println("");
+                    System.out.println("Seu pneu traseiro direito furou, substituindo pneu pelo step.");
+                    System.out.println("Durabilidade dos pneus. ");
+                    System.out.println("Dianteiro esquerdo: " + computadorDeBordo.getCarro().getPneuDianteiroEsquerdo().getDurabilidadePneu() + "km");
+                    System.out.println("Dianteiro direito: " + computadorDeBordo.getCarro().getPneuDianteiroDireito().getDurabilidadePneu() + "km");
+                    System.out.println("Traseiro esquerdo: " + computadorDeBordo.getCarro().getPneuTraseiroEsquerdo().getDurabilidadePneu() + "km");
+                    System.out.println("Step: " + computadorDeBordo.getCarro().getPneuStep().getDurabilidadePneu() + "km");
+                    System.out.println("");
+                    computadorDeBordo.getVerificaPercurso().diminuiDurabilidadePneu(computadorDeBordo, km);
+                    computadorDeBordo.getVerificaPercurso().diminuiDurabilidadePneu_Step(computadorDeBordo);
+                }else{
+                    System.out.println("Seu pneu furou e o carro não possui step. A viagem acabou.");
+                }
+            }else if (km > 400 && computadorDeBordo.getCarro().getPneuStep().isStep() == true){
                 System.out.println("Durabilidade dos pneus. ");
                 System.out.println("Dianteiro esquerdo: " + computadorDeBordo.getCarro().getPneuDianteiroEsquerdo().getDurabilidadePneu() + "km");
                 System.out.println("Dianteiro direito: " + computadorDeBordo.getCarro().getPneuDianteiroDireito().getDurabilidadePneu() + "km");
@@ -74,6 +87,8 @@ public class Percurso {
                 computadorDeBordo.getVerificaPercurso().diminuiDurabilidadePneu(computadorDeBordo, km);
                 computadorDeBordo.getVerificaPercurso().diminuiDurabilidadePneu_Step(computadorDeBordo);
             }else {
+                System.out.println("");
+                System.out.println("Sua viagem acabou.");
                 km = 500;
             }
         }
